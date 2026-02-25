@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import OrgStructure from "@/components/OrgStructure";
+import BioPixelVision2035 from "@/components/BioPixelVision2035";
 import OperationalFlow from "@/components/OperationalFlow";
 import BusinessModel from "@/components/BusinessModel";
 import Footer from "@/components/Footer";
@@ -24,6 +25,7 @@ const Index = () => {
       />
 
       <OrgStructure />
+      <BioPixelVision2035 />
       <OperationalFlow />
       <BusinessModel />
       <Footer />
