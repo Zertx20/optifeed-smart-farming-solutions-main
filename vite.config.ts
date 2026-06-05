@@ -6,9 +6,16 @@ import { componentTagger } from "lovable-tagger";
 // Must match the GitHub repo name for project-site Pages (username.github.io/REPO_NAME/)
 const GITHUB_PAGES_BASE = "/optifeed-smart-farming-solutions-main/";
 
+function resolveBase(mode: string): string {
+  if (mode !== "production") return "/";
+  // Vercel serves from domain root; GitHub Pages uses a repo subpath.
+  if (process.env.VERCEL) return "/";
+  return GITHUB_PAGES_BASE;
+}
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? GITHUB_PAGES_BASE : "/",
+  base: resolveBase(mode),
   server: {
     host: "::",
     port: 8080,
